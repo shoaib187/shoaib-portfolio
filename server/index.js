@@ -10,6 +10,7 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(cors());
 app.get("/api/dummyData", (req, res) => {
   res.send({ message: "Welcome to my App!" });
@@ -18,3 +19,6 @@ app.get("/api/dummyData", (req, res) => {
 app.listen(API_BASE_URL, () => {
   console.log(`Server is running on port ${API_BASE_URL}`);
 });
+
+// backend    https://shoaib-portfolio-kohl.vercel.app/api/dummyData
+// frontend   https://shoaib-portfolio-kz7z.vercel.app
