@@ -13,7 +13,7 @@ app.use(
 
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/api/dummyData", (req, res) => {
   res.send({ message: "Welcome to my App!" });
 });
 

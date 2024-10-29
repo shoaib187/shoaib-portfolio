@@ -216,6 +216,18 @@ function MainPage() {
     link.click();
   };
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const fetchData = async () => {
+    const response = await fetch(`${backendUrl}/api/dummyData`);
+    const data = await response.json();
+    // Handle the data
+    console.log("data is ", data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  });
+
   return (
     <div className="App">
       <header className="header flex items-center justify-center w-full h-20 sticky z-10">
