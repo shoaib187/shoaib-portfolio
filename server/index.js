@@ -10,9 +10,7 @@ app.use(
     credentials: true,
   })
 );
-
 app.use(cors());
-
 app.get("/api/dummyData", (req, res) => {
   res.send({ message: "Welcome to my App!" });
 });

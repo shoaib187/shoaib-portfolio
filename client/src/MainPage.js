@@ -216,6 +216,10 @@ function MainPage() {
     link.click();
   };
 
+  useEffect(() => {
+    fetchData();
+  });
+
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const fetchData = async () => {
     const response = await fetch(`${backendUrl}/api/dummyData`);
@@ -223,10 +227,6 @@ function MainPage() {
     // Handle the data
     console.log("data is ", data);
   };
-
-  useEffect(() => {
-    fetchData();
-  });
 
   return (
     <div className="App">
