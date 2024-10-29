@@ -485,6 +485,7 @@ header nav button {
   }
   .header {
     width: 100%;
+    max-height: 8vh;
   }
   .contact_page {
     min-height: 70vh;
@@ -544,6 +545,7 @@ header nav button {
   }
   .about_section1 {
     min-height: 100vh;
+    padding-top: 20px;
   }
   .about_section1 .inner_content {
     flex-direction: column;
