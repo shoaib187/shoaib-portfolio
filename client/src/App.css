@@ -130,11 +130,15 @@ header nav button {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 16px;
+  position: absolute;
+  left: 30px;
+  top: 30px;
 }
+
 .card .image img {
   z-index: 1;
 }
+
 .card .info {
   width: 85%;
   display: flex;
