@@ -122,7 +122,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
-            <Route path="/home" element={<MainPage />} />
+            <Route path="/home/*" element={<MainPage />} />
             <Route path="/templates" element={<Templates />} />
           </Routes>
         </BrowserRouter>
