@@ -5,15 +5,12 @@ const router = require("./routes/route");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { MongoClient } = require("mongodb");
+require("dotenv").config();
 
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 const API_BASE_URL = process.env.SECRET_KEY || 5432;
-
-app.get("/api/dummyData", (req, res) => {
-  res.send({ message: "Welcome to my App!" });
-});
 
 const URL =
   "mongodb+srv://ms0319255:hkPA6m6dTEsnw2vJ@trinity.imcsgrs.mongodb.net/?appName=Trinity";
