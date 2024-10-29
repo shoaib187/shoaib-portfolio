@@ -122,8 +122,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
-            <Route path="/templates" element={<Templates />} />
             <Route path="/home" element={<MainPage />} />
+            <Route path="/templates" element={<Templates />} />
           </Routes>
         </BrowserRouter>
       </div>
