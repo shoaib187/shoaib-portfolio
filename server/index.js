@@ -7,13 +7,14 @@ const bodyParser = require("body-parser");
 const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
+const URL = process.env.URL;
+// console.log("MongoDB URL: ", URL);
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
-const API_BASE_URL = process.env.SECRET_KEY || 5432;
+const API_BASE_URL = 5432;
 
-const URL =
-  "mongodb+srv://ms0319255:hkPA6m6dTEsnw2vJ@trinity.imcsgrs.mongodb.net/?appName=Trinity";
 const client = new MongoClient(URL);
 
 const connectToMongoose = async () => {
@@ -27,14 +28,29 @@ const connectToMongoose = async () => {
 
 const connectToMongoDb = async () => {
   try {
-    await client.connect();
+    await client.connect({
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log("Connected to mongodb database");
   } catch (error) {
     console.log("Error while connecting to mongoDb database", error.message);
   }
 };
 
-app.use("/", router);
+// app.use("/", router);
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.get("/home", (req, res) => {
+  res.send("Welcome to Home Page!");
+});
+
+app.get("/about", (req, res) => {
+  res.send("Welcome to about Page!");
+});
 
 app.listen(API_BASE_URL, () => {
   try {
