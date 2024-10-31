@@ -38,7 +38,7 @@ const connectToMongoDb = async () => {
   }
 };
 
-// app.use("/", router);
+app.use("/", router);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
