@@ -59,11 +59,14 @@ app.get("/get_user", (req, res) => {
   res.send({ message: "Shoaib" });
 });
 
+if (mongoose.connection.readyState === 0) {
+  connectToMongoose();
+}
+
 app.listen(PORT, () => {
   try {
     console.log("Server is running on port ", PORT);
     connectToMongoDb();
-    connectToMongoose();
   } catch (error) {
     console.log("Error while running server internal server error!");
   }
