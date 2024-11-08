@@ -15,3 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.Toastify__progress-bar {
+  background-color: #4caf50; /* Green color (customizable) */
+}

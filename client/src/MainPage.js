@@ -1,4 +1,5 @@
 import "./App.css";
+import { MdSend } from "react-icons/md";
 import { ReactTyped } from "react-typed";
 import {
   FiArrowRight,
@@ -9,6 +10,7 @@ import {
   FiMenu,
   FiTwitter,
 } from "react-icons/fi";
+import emailjs from "emailjs-com";
 import ProjectCard from "./custom/ProjectCard";
 import { useEffect, useState } from "react";
 import Skills from "./custom/Skills";
@@ -20,6 +22,10 @@ import {
   LiaMailBulkSolid,
   LiaPhoneVolumeSolid,
 } from "react-icons/lia";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { MdClose } from "react-icons/md";
 import { SiFiverr } from "react-icons/si";
 import { Link } from "react-router-dom";
@@ -204,9 +210,68 @@ function MainPage() {
     link.click();
   };
 
+  const [status, setStatus] = useState("");
+  const notify = () =>
+    toast.success(status, {
+      icon: <MdSend />,
+      type: "success",
+    });
+  const [formData, setFormData] = useState({
+    to_name: "",
+    from_email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { to_name, from_email, phone, message } = formData;
+    const templateParams = {
+      to_name, // Receiver's name (you can set it as your name)
+      from_email, // Sender's email (the one user entered)
+      phone, // User's phone number
+      message, // User's message
+    };
+
+    // console.log(templateParams);
+    // Send the form data using EmailJS
+    emailjs
+      .send(
+        "service_7gx3ul6", // Replace with your Service ID from EmailJS
+        "template_sz9s69p", // Replace with your Template ID from EmailJS
+        templateParams, // Target the form to send form data
+        "qCtVYXrdJoqEWJ-xt" // Replace with your User ID from EmailJS
+      )
+      .then(
+        (result) => {
+          setStatus("Email sent successfully!");
+        },
+        (error) => {
+          // console.log(error.text);
+          setStatus("Failed to send email. Please try again later.");
+        }
+      );
+
+    notify();
+  };
+
   return (
     <div className="App">
       <Header />
+      <ToastContainer
+        icon={true}
+        progressStyle={{ background: "#fe3377" }}
+        pauseOnHover={false}
+        toastStyle={{ background: "#fff" }}
+      />
       {/* about_section1 */}
       <section
         id="home"
@@ -567,28 +632,51 @@ function MainPage() {
             </div>
           </div>
           <div className="w-40 bg-white" class="contact_card">
-            <form className="w-full">
+            <form className="w-full" onSubmit={handleSubmit}>
               <label className="font-semibold">Name*</label>
               <input
+                type="text"
+                name="to_name"
                 placeholder="Your Name"
+                value={formData.to_name}
+                onChange={handleChange}
                 className="w-full h-12 pl-4 mb-4 rounded-lg mt-1 bg-slate-50"
               />
               <label className="font-semibold">Email address*</label>
               <input
+                type="email"
+                name="from_email"
                 placeholder="Your Email"
+                value={formData.from_email}
+                onChange={handleChange}
                 className="w-full h-12 pl-4 mb-4 rounded-lg mt-1 bg-slate-50"
               />
               <label className="font-semibold">Phone number*</label>
               <input
+                type="text"
+                name="phone"
                 placeholder="Your Number"
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full h-12 pl-4 mb-4 rounded-lg mt-1 bg-slate-50"
               />
               <label className="font-semibold">Type your message*</label>
               <textarea
+                name="message"
                 placeholder="Leave a message..."
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full h-40 p-3 rounded-lg mt-1 bg-slate-50"
               />
-              <button id="button">Send Message</button>
+              <button
+                type="submit"
+                id="button"
+                className="w-full bg-blue-600 text-white py-3 rounded-lg mt-4"
+              >
+                Send Message
+              </button>
+              {/* {status && <p className="mt-4">{status}</p>}{" "} */}
+              {/* Show status message */}
             </form>
           </div>
         </div>

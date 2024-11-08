@@ -1,72 +1,60 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
+import axios from "axios";
 
-const socket = io("http://localhost:4000"); //Replace with your server address
+const socket = io("http://localhost:8000");
 
-function App1() {
+function App1({ userId, username, receiverId }) {
+  const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [messageInput, setMessageInput] = useState("");
 
   useEffect(() => {
-    // Socket.IO event listeners
+    // Fetch chat history
+    axios
+      .get(`http://localhost:8000/messages?user1=${userId}&user2=${receiverId}`)
+      .then((res) => setMessages(res.data))
+      .catch((err) => console.log(err));
 
-    // Listen for incoming messages
-    socket.on("message", (message) => {
-      setMessages([...messages, message]);
+    // Listen for new messages
+    socket.on("receiveMessage", (msg) => {
+      if (msg.receiverId === userId) {
+        setMessages((prevMessages) => [...prevMessages, msg]);
+      }
     });
 
     return () => {
-      // Cleanup on component unmount
-      socket.off("message");
+      socket.off("receiveMessage");
     };
-  }, [messages]);
+  }, [userId, receiverId]);
 
   const sendMessage = () => {
-    if (messageInput.trim() !== "") {
-      const message = { text: messageInput, timestamp: new Date() };
-      socket.emit("message", message);
-      setMessageInput("");
+    if (message.trim()) {
+      const newMessage = { senderId: userId, receiverId, content: message };
+      socket.emit("sendMessage", newMessage);
+      setMessages((prev) => [...prev, newMessage]);
+      setMessage("");
     }
   };
 
   return (
-    <div className="flex justify-center items-center w-full h-screen bg-gradient-to-b from-blue-300 to-blue-200">
-      <div className="bg-white rounded-lg w-96 h-96 p-4 shadow-md">
-        <div className="flex flex-col h-full">
-          <div className="flex-1 p-2 overflow-y-auto bg-gray-100 rounded-md">
-            {messages.map((msg, index) => (
-              <div key={index} className="flex flex-col items-start">
-                <div
-                  className="bg-blue-500 
-                   text-white p-2 rounded-md"
-                >
-                  {msg.text}
-                </div>
-                <span className="text-gray-500 text-xs">
-                  {new Date(msg.timestamp).toLocaleTimeString()}
-                </span>
-              </div>
-            ))}
+    <div>
+      <div className="message-container">
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={msg.senderId === userId ? "sent" : "received"}
+          >
+            {msg.content}
           </div>
-          <div className="p-2 border-t border-gray-300">
-            <div className="flex">
-              <input
-                type="text"
-                className="w-full px-2 py-1 border rounded-l-md outline-none"
-                placeholder="Type your message..."
-                value={messageInput}
-                onChange={(e) => setMessageInput(e.target.value)}
-              />
-              <button
-                className="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600"
-                onClick={sendMessage}
-              >
-                Send
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+      <input
+        type="text"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder="Type a message..."
+      />
+      <button onClick={sendMessage}>Send</button>
     </div>
   );
 }
