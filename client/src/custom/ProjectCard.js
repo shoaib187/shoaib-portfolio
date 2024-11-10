@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ProjectCard({
   type,
@@ -6,9 +7,10 @@ export default function ProjectCard({
   technologies,
   onClick,
   image,
+  link,
 }) {
   return (
-    <div onClick={onClick} class="blog_card">
+    <div class="blog_card">
       <div className="w-full h-64 overflow-hidden rounded-lg">
         <img
           src={image}
@@ -44,14 +46,16 @@ export default function ProjectCard({
           </p>
         ))}
       </div>
-      <button
-        className="w-32 h-10 rounded-md mt-4 text-white font-medium"
-        style={{
-          background: "#fe3377",
-        }}
-      >
-        Live Preview
-      </button>
+      <Link to={link}>
+        <button
+          className="w-32 h-10 rounded-md mt-4 text-white font-medium"
+          style={{
+            background: "#fe3377",
+          }}
+        >
+          Live Preview
+        </button>
+      </Link>
     </div>
   );
 }

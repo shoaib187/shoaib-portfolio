@@ -90,12 +90,14 @@ function MainPage() {
       title: "Online auto shop and spare parts",
       subtitle: "Business website",
       technologies: ["HTML5", "CSS3", "Javascript"],
+      link: "https://auto-shop-topaz.vercel.app",
     },
     {
       image: image.project2,
       title: "Buy furniture online from your home",
       subtitle: "E-Commerce Furniture website",
       technologies: ["HTML5", "CSS3", "Javascript"],
+      link: "https://e-commerce-furniture-website-kappa.vercel.app",
     },
     {
       image: image.project3,
@@ -120,6 +122,7 @@ function MainPage() {
       title: "American model star portfolio website",
       subtitle: "Portfolio website",
       technologies: ["HTML5", "CSS3", "Javascript"],
+      link: "https://modelstar-portfolio.vercel.app",
     },
   ]);
   const [my_skills, set_my_skills] = useState([
@@ -500,7 +503,7 @@ function MainPage() {
               image={item?.image}
               type={item?.subtitle}
               title={item?.title}
-              onClick={() => alert("Abhi na kuch keh")}
+              link={item?.link}
               technologies={item?.technologies}
             />
           ))}
