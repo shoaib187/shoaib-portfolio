@@ -60,7 +60,8 @@ export default function Templates() {
               image={item?.image}
               type={item?.subtitle}
               title={item?.title}
-              onClick={() => alert("Abhi na kuch keh")}
+              buttonText={"Live Preview"}
+              // onClick={() => alert("Abhi na kuch keh")}
               technologies={item?.technologies}
             />
           ))}

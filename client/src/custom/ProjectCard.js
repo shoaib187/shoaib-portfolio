@@ -8,6 +8,7 @@ export default function ProjectCard({
   onClick,
   image,
   link,
+  buttonText,
 }) {
   return (
     <div class="blog_card">
@@ -27,6 +28,7 @@ export default function ProjectCard({
         style={{
           color: "#fe3377",
         }}
+        numberOfLines={1}
       >
         {type}
       </h4>
@@ -39,7 +41,7 @@ export default function ProjectCard({
       <div className="flex items-center flex-wrap mt-2">
         {technologies.map((item, index) => (
           <p
-            className="technologies px-4 py-1 bg-slate-200 rounded-full mr-2"
+            className="technologies px-4 py-1 my-1 bg-slate-200 rounded-full mr-2"
             style={{ fontWeight: 500 }}
           >
             {item}
@@ -48,12 +50,12 @@ export default function ProjectCard({
       </div>
       <Link to={link}>
         <button
-          className="w-32 h-10 rounded-md mt-4 text-white font-medium"
+          className="px-5 h-10 rounded-md mt-4 text-white font-medium absolute bottom-4"
           style={{
             background: "#fe3377",
           }}
         >
-          Live Preview
+          {buttonText}
         </button>
       </Link>
     </div>

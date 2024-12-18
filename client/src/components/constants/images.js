@@ -37,6 +37,9 @@ import vscode from "../../assets/images/vscode.png";
 import react_icon from "../../assets/images/react-js-icon.6c20d39c.svg";
 import material_icon from "../../assets/images/material-ui-icon.2018088f.svg";
 import tailwind_icon from "../../assets/images/tailwind-css-icon.9c4bdccf.svg";
+import doctor from "../../assets/images/doctor.jpg";
+import music from "../../assets/images/music.jpg";
+import dictionary from "../../assets/images/dictionary.jpg";
 
 export const image = {
   user_img,
@@ -80,4 +83,7 @@ export const image = {
   elipse4,
   elipse5,
   elipse6,
+  doctor,
+  music,
+  dictionary,
 };

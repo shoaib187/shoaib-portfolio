@@ -33,6 +33,7 @@ import TestimonialCard from "./custom/TestimonialCard";
 import { ChatComponent } from "./custom/ChatComponent";
 import { image } from "./components/constants/images";
 import Header from "./custom/Header";
+
 function MainPage() {
   const [achievements, setAchievements] = useState([
     {
@@ -95,7 +96,7 @@ function MainPage() {
     {
       image: image.project2,
       title: "Buy furniture online from your home",
-      subtitle: "E-Commerce Furniture website",
+      subtitle: "E-Commerce website",
       technologies: ["HTML5", "CSS3", "Javascript"],
       link: "https://e-commerce-furniture-website-kappa.vercel.app",
     },
@@ -123,6 +124,28 @@ function MainPage() {
       subtitle: "Portfolio website",
       technologies: ["HTML5", "CSS3", "Javascript"],
       link: "https://modelstar-portfolio.vercel.app",
+    },
+  ]);
+  const [appProjects, setAppProjects] = useState([
+    {
+      image: image.doctor,
+      title: "Doctor Appointment ",
+      subtitle: "Appointment App",
+      technologies: ["React Native", "Node.js", "Express.js", "MongoDB"],
+      link: "https://apkpure.com/p/com.doctorappointment",
+    },
+    {
+      image: image.dictionary,
+      title: "Eng-Urdu Dictionary",
+      subtitle: "Education",
+      technologies: ["Tailwind.css", "React Native"],
+      link: "https://e-commerce-furniture-website-kappa.vercel.app",
+    },
+    {
+      image: image.music,
+      title: "Music Player App",
+      subtitle: "Music, Sound player",
+      technologies: ["React Native", "Spotify", "Tailwind.css"],
     },
   ]);
   const [my_skills, set_my_skills] = useState([
@@ -237,6 +260,10 @@ function MainPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { to_name, from_email, phone, message } = formData;
+    if (!to_name || !from_email || !phone || !message) {
+      alert("Please all required fields to send messages");
+      return;
+    }
     const templateParams = {
       to_name, // Receiver's name (you can set it as your name)
       from_email, // Sender's email (the one user entered)
@@ -244,8 +271,6 @@ function MainPage() {
       message, // User's message
     };
 
-    // console.log(templateParams);
-    // Send the form data using EmailJS
     emailjs
       .send(
         "service_7gx3ul6", // Replace with your Service ID from EmailJS
@@ -255,7 +280,8 @@ function MainPage() {
       )
       .then(
         (result) => {
-          setStatus("Email sent successfully!");
+          setStatus(200);
+          console.log("result", result);
         },
         (error) => {
           // console.log(error.text);
@@ -440,14 +466,15 @@ function MainPage() {
                 fontWeight: 500,
               }}
             >
-              First of all, I am very Thankful to you for Visting my Portfolio,
-              my name is{" "}
-              <span style={{ color: "#152a60" }}> Muhammad Shoaib </span>, and i
-              am a frontend React developer I have two years of experience in
-              front-end development. I am doing my fronted from IIFA TECH It
-              Solutions, and my specialization in React JS,and React Native with
-              Material UI and Tailwind CSS, and also html css or Bootstrap
-              Javascript, Typescript and Firebase.
+              Thank you for visiting my portfolio! My name is{" "}
+              <span style={{ color: "#152a60" }}>Muhammad Shoaib</span>, and I
+              am a dedicated front-end developer with over two years of
+              experience specializing in React and React Native. I have a strong
+              command of modern front-end technologies, including React JS,
+              React Native, Material UI, Tailwind CSS, HTML, CSS, Bootstrap,
+              JavaScript, and TypeScript. Additionally, I have experience
+              working with Firebase to build scalable and efficient
+              applications.
             </p>
             <p
               style={{
@@ -458,7 +485,7 @@ function MainPage() {
             >
               I have a deep interest in web development i made
               <span style={{ background: "yellow", fontWeight: 600 }}>
-                10+ live projects
+                4+ live projects
               </span>
               for a company and my clients. I wish to use my technical acumen to
               contribute to a team that works and scales and also creates a
@@ -504,6 +531,7 @@ function MainPage() {
               type={item?.subtitle}
               title={item?.title}
               link={item?.link}
+              buttonText={"Live Preview"}
               technologies={item?.technologies}
             />
           ))}
@@ -516,6 +544,25 @@ function MainPage() {
             </span>
           </a>
         </Link>
+      </section>
+      <section id="portfolio" class="flex flex-col items-center justify-center">
+        {/* top_bar */}
+        <div class="top_bar flex-col min-h-60 flex items-center justify-center">
+          <h1 className="text-5xl font-bold mt-2 text-blue-950">My Apps</h1>
+        </div>
+        <div class="flex flex-wrap items-center justify-between w-11/12">
+          {appProjects.map((item, index) => (
+            <ProjectCard
+              key={`index ${index}`}
+              image={item?.image}
+              type={item?.subtitle}
+              title={item?.title}
+              link={item?.link}
+              buttonText={"Download Now"}
+              technologies={item?.technologies}
+            />
+          ))}
+        </div>
       </section>
       {/* about_section4 */}
       <section id="skills" class="flex flex-col items-center justify-center">
