@@ -21,13 +21,14 @@ import {
   LiaLocationArrowSolid,
   LiaMailBulkSolid,
   LiaPhoneVolumeSolid,
+  LiaWhatsapp,
 } from "react-icons/lia";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { MdClose } from "react-icons/md";
-import { SiFiverr } from "react-icons/si";
+import { SiFiverr, SiWhatsapp } from "react-icons/si";
 import { Link } from "react-router-dom";
 import TestimonialCard from "./custom/TestimonialCard";
 import { ChatComponent } from "./custom/ChatComponent";
@@ -229,11 +230,11 @@ function MainPage() {
 
   const [value, setValue] = useState(0);
 
+  const fileId = "1vFH7BF_oSg4Y1_nzX-VnWT_qa1JVuqRI";
+  const fileDownloadUrl = `https://drive.google.com/uc?id=${fileId}&export=download`;
+
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "./cv.pdf";
-    link.download = "Muhammad_Shoaib_CV.pdf";
-    link.click();
+    window.location.href = fileDownloadUrl;
   };
 
   const [status, setStatus] = useState("");
@@ -348,7 +349,7 @@ function MainPage() {
               </li>
               <li className="w-14 h-14" class="li">
                 <a href="#twitter">
-                  <FiTwitter size={22} className="icon" />
+                  <SiWhatsapp size={22} className="icon" />
                 </a>
               </li>
               <li className="w-14 h-14" class="li">
@@ -537,7 +538,7 @@ function MainPage() {
           ))}
         </div>
         <Link to={"/templates"}>
-          <a href="#" className="font-bold mt-2 flex items-center">
+          <a href="/" className="font-bold mt-2 flex items-center">
             <span style={{ color: "#fe3377" }}>Show More</span>
             <span>
               <FiArrowRight size={20} color="#fe3377" />
@@ -743,7 +744,7 @@ function MainPage() {
             </li>
             <li className="w-14 h-14" class="li">
               <a href="#twitter">
-                <FiTwitter size={22} className="icon" />
+                <LiaWhatsapp size={22} className="icon" />
               </a>
             </li>
             <li className="w-14 h-14" class="li">
@@ -762,7 +763,7 @@ function MainPage() {
               </a>
             </li>
             <li className="w-14 h-14" class="li">
-              <a href="#linkedin">
+              <a href="https://www.upwork.com/freelancers/~01c2b7acdb7eb0c312">
                 <SiFiverr size={22} className="icon" />
               </a>
             </li>
@@ -784,7 +785,7 @@ function MainPage() {
           onClick={() => setValue(1)}
           className="w-12 h-12 bg-green-600 rounded-full fixed bottom-3 right-3"
         >
-          <img src={image.profile} />
+          <img src={image.profile} alt="not found!" />
         </button>
       ) : (
         <button

@@ -45,64 +45,73 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         {isDesktop ? (
-          <ul className="flex items-center w-2/3 justify-between">
-            <li className="flex items-center">
-              <MdOutlineHome
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <a href="#home">Home</a>
-            </li>
-            <li className="flex items-center">
-              <MdOutlineBuild
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <a href="#services">Services</a>
-            </li>
-            <li className="flex items-center">
-              <MdPersonOutline
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <a href="#about">About</a>
-            </li>
-            <li className="flex items-center">
-              <MdWorkOutline
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <a href="#portfolio">Portfolio</a>
-            </li>
-            <li className="flex items-center">
-              <MdOutlineBuildCircle
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <a href="#skills">Skills</a>
-            </li>
-            <li className="flex items-center">
-              <MdStarOutline
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <a href="#testimonial">Testimonial</a>
-            </li>
-            <li className="flex items-center">
-              <MdMailOutline
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <a href="#contact">Contact us</a>
-            </li>
-            <li className="flex items-center">
-              <MdOutlineSmartDisplay
-                size={18}
-                className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-              />
-              <Link to={"/templates"}>Templates</Link>
-            </li>
-          </ul>
+          <>
+            <ul className="flex items-center w-2/3 justify-between">
+              <li className="flex items-center">
+                <MdOutlineHome
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <a href="#home">Home</a>
+              </li>
+              <li className="flex items-center">
+                <MdOutlineBuild
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <a href="#services">Services</a>
+              </li>
+              <li className="flex items-center">
+                <MdPersonOutline
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <a href="#about">About</a>
+              </li>
+              <li className="flex items-center">
+                <MdWorkOutline
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li className="flex items-center">
+                <MdOutlineBuildCircle
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <a href="#skills">Skills</a>
+              </li>
+              <li className="flex items-center">
+                <MdStarOutline
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <a href="#testimonial">Testimonial</a>
+              </li>
+              <li className="flex items-center">
+                <MdMailOutline
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <a href="#contact">Contact us</a>
+              </li>
+              <li className="flex items-center">
+                <MdOutlineSmartDisplay
+                  size={18}
+                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
+                />
+                <Link to={"/templates"}>Templates</Link>
+              </li>
+            </ul>
+            <Link
+              to={
+                "https://www.upwork.com/freelancers/muhammadshoaib122?mp_source=share"
+              }
+            >
+              <button>Hire Me</button>
+            </Link>
+          </>
         ) : (
           // Mobile Toggle Button
           <div
@@ -115,7 +124,6 @@ export default function Header() {
             <FiMenu size={20} color="#fff" />
           </div>
         )}
-        <button>Hire Me</button>
       </nav>
 
       {/* Sidebar for Mobile */}
