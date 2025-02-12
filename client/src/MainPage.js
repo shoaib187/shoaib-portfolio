@@ -499,7 +499,7 @@ function MainPage() {
               positive impact on society. I Love to join you to improve my
               development skills and communication skills.
             </p>
-            <a href="./cv.pdf" download="Muhammad_Shoaib_CV.pdf">
+            <a href="./cv.pdf" download="cv.pdf">
               <button
                 // onClick={handleDownload}
                 style={{
