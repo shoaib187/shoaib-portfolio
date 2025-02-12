@@ -228,12 +228,8 @@ function MainPage() {
 
   const [value, setValue] = useState(0);
 
-  const fileId = "1vFH7BF_oSg4Y1_nzX-VnWT_qa1JVuqRI";
-  const fileDownloadUrl = `https://drive.google.com/uc?id=${fileId}&export=download`;
-
-  const handleDownload = () => {
-    window.location.href = fileDownloadUrl;
-  };
+  const cvUrl =
+    "https://drive.google.com/uc?export=download&id=1wJsFrf-ynBPQ_GmQYpEyRDVmCIMN4u2h";
 
   const [status, setStatus] = useState("");
   const notify = () =>
@@ -499,7 +495,7 @@ function MainPage() {
               positive impact on society. I Love to join you to improve my
               development skills and communication skills.
             </p>
-            <a href="./cv.pdf" download="cv.pdf">
+            <a href={cvUrl} download>
               <button
                 // onClick={handleDownload}
                 style={{
