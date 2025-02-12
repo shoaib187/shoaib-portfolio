@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Montserrat:wght@300&family=Urbanist:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+
 html,
 body {
   background: rgb(236, 240, 243);
@@ -14,6 +16,7 @@ body {
   animation: all 1s;
   transition: 1s;
 }
+
 p::selection,
 h1::selection,
 h2::selection,
@@ -23,6 +26,7 @@ span::selection {
   color: #fff;
   background-color: #fd246c;
 }
+
 header .toggle_btn {
   display: none;
 }
@@ -47,15 +51,18 @@ header {
   right: 0;
   background: rgb(236, 240, 243);
 }
+
 header nav ul li a {
   font-weight: 500;
   color: #152a60;
   text-decoration: none;
   transition: 0.5s;
 }
+
 header nav ul li a:hover {
   color: #fd246c;
 }
+
 header nav button {
   width: 100px;
   height: 45px;
@@ -68,6 +75,7 @@ header nav button {
   cursor: pointer;
   box-shadow: 1px 2px 5px #ddd;
 }
+
 .navigation_list {
   width: "60%";
 }
@@ -85,20 +93,21 @@ header nav button {
   justify-content: center;
   border-radius: 4px;
   cursor: pointer;
-  background: linear-gradient(
-    to bottom,
-    rgb(238, 240, 243),
-    rgb(255, 255, 255)
-  );
+  background: linear-gradient(to bottom,
+      rgb(238, 240, 243),
+      rgb(255, 255, 255));
   box-shadow: -4px -4px 20px #fff, 4px 4px 20px #ddd;
 }
+
 .li:hover {
   transform: translateY(-10px);
   background: linear-gradient(to bottom, #de2160, #f20957);
 }
+
 .li:hover #icon {
   color: #fff;
 }
+
 .card {
   width: 31%;
   display: flex;
@@ -153,17 +162,20 @@ header nav button {
   color: #152a60;
   font-size: 26px;
 }
+
 .card .info p {
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 24px;
   color: #888;
 }
+
 .card #elipse {
   position: absolute;
   bottom: 0;
   right: 0;
 }
+
 .chat_section::-webkit-scrollbar {
   display: none;
 }
@@ -184,6 +196,7 @@ header nav button {
 .input_container input:focus .input_container {
   border: 1px dashed green;
 }
+
 .images {
   background: linear-gradient(145deg, rgb(234, 236, 240), rgb(255, 255, 255));
   border-radius: 10px;
@@ -193,9 +206,11 @@ header nav button {
   width: 30%;
   max-height: 80vh;
 }
+
 .images img {
   width: 100%;
 }
+
 .blog_card {
   width: 32%;
   height: 500px;
@@ -206,6 +221,7 @@ header nav button {
   box-shadow: -6px -6px 10px #f6f6f6, 10px 10px 20px #eee;
   background: linear-gradient(145deg, rgb(234, 236, 240), rgb(255, 255, 255));
 }
+
 .blog_card_small {
   width: 18%;
   height: 70px;
@@ -217,9 +233,11 @@ header nav button {
   box-shadow: -3px -3px 6px #f6f6f6, 3px 3px 5px #eee;
   background: linear-gradient(145deg, rgb(234, 236, 240), rgb(255, 255, 255));
 }
+
 .contact {
   min-height: 90vh;
 }
+
 .contact_card {
   width: 45%;
   border-radius: 8px;
@@ -228,11 +246,13 @@ header nav button {
   background-color: #fff;
   min-height: 100vh;
 }
+
 .testimonial_card_image {
   width: 80px;
   height: 80px;
   object-fit: cover;
 }
+
 .contact_page {
   height: 100%;
   display: flex;
@@ -263,6 +283,7 @@ header nav button {
   transition: 0.5s all;
   font-weight: 600;
 }
+
 .welcome_btn:hover {
   background-color: black;
 }
@@ -290,6 +311,7 @@ header nav button {
   color: #fff;
   transition: 0.5s;
 }
+
 .testimonial_card {
   width: 95%;
   height: 400px;
@@ -298,6 +320,7 @@ header nav button {
   box-shadow: -3px -3px 10px #f6f6f6, 4px 4px 10px #d5d5d5;
   background: linear-gradient(145deg, rgb(227, 233, 236), rgb(255, 255, 255));
 }
+
 /* LoadingIndicator.css */
 .loading-indicator {
   display: flex;
@@ -321,6 +344,7 @@ header nav button {
   height: 50px;
   animation: spin 1s linear infinite;
 }
+
 .navigation_list li #nav_icon {
   display: none;
 }
@@ -329,6 +353,7 @@ header nav button {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -342,27 +367,35 @@ header nav button {
   .about_section1 {
     min-height: 100vh;
   }
+
   .about_section1 .inner_content .about_me h4 {
     font-size: 24px;
   }
+
   .about_section1 .inner_content .about_me .auto_type {
     font-size: 50px;
   }
+
   .blog_card {
     height: 550px;
   }
+
   .info h1 {
     font-size: 20px;
   }
+
   .info p {
     font-size: 14px;
   }
+
   .project_title {
     font-size: 20px;
   }
+
   .project_type {
     font-size: 16px;
   }
+
   .technologies {
     margin: 4px;
   }
@@ -372,9 +405,11 @@ header nav button {
   header .toggle_btn {
     display: flex;
   }
+
   .header {
     width: 100%;
   }
+
   .chat_section {
     width: 50%;
     height: 90%;
@@ -385,6 +420,7 @@ header nav button {
     flex-direction: column;
     transition: width 0.5s all;
   }
+
   .navigation_list a {
     font-size: 14px;
   }
@@ -392,67 +428,86 @@ header nav button {
   .navigation_list li #nav_icon {
     display: none;
   }
+
   .header button {
     display: none;
   }
+
   .about_section1 {
     min-height: 100vh;
   }
+
   .about_section1 .inner_content .about_me h4 {
     font-size: 16px;
   }
+
   .about_section1 .inner_content .about_me h1 {
     font-size: 36px;
     margin-bottom: 10px;
     margin-top: 10px;
   }
+
   .about_section1 .inner_content .about_me p {
     font-size: 14px;
     margin-top: 10px;
   }
+
   .about_section1 .inner_content .about_me .auto_type {
     font-size: 30px;
   }
+
   .about_section1 .inner_content .about_me ul {
     width: 40%;
   }
+
   .top_bar h2 {
     font-size: 16px;
   }
+
   .top_bar h1 {
     font-size: 36px;
   }
+
   .card {
     width: 48%;
     height: 550px;
   }
+
   .about_section4_about_me .images {
     width: 40%;
   }
+
   .about_section4_about_me .images img {
     width: 100%;
   }
+
   .about_section4_about_me .about {
     width: 57%;
   }
+
   .about_section4_about_me .about h1 {
     font-size: 24px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
+
   .about_section4_about_me .about p {
     font-size: 14px;
     margin-bottom: 0px;
   }
+
   .blog_card {
     width: 48%;
   }
+
   .info h1 {
     font-size: 20px;
   }
+
   .blog_card_small {
     width: 30%;
   }
+
   .blog_card_small h3 {
     font-size: 14px;
   }
@@ -460,24 +515,31 @@ header nav button {
   .info p {
     font-size: 14px;
   }
+
   .project_title {
     font-size: 20px;
   }
+
   .project_type {
     font-size: 16px;
   }
+
   .technologies {
     margin: 4px;
   }
+
   .contact_page {
     width: 48%;
   }
+
   .info_card {
     margin-bottom: 18px;
   }
+
   .contact_card {
     width: 48%;
   }
+
   header nav ul .close {
     display: flex;
   }
@@ -487,19 +549,24 @@ header nav button {
   header .toggle_btn {
     display: flex;
   }
+
   .header {
     width: 100%;
   }
+
   .contact_page {
     min-height: 70vh;
   }
+
   .contact_card {
     min-height: 76vh;
   }
+
   .chat_section {
     width: 90%;
     height: 85%;
   }
+
   header nav ul .close {
     display: flex;
   }
@@ -507,15 +574,19 @@ header nav button {
   .welcome_page h4 {
     font-size: 18px;
   }
+
   .welcome_page h1 {
     font-size: 24px;
   }
+
   .welcome_page ul {
     width: 50%;
   }
+
   .welcome_page .auto_type {
     font-size: 26px;
   }
+
   .navigation_list {
     width: 250px;
     flex-direction: column;
@@ -547,104 +618,133 @@ header nav button {
     display: flex;
     align-items: center;
   }
+
   .about_section1 {
     min-height: 100vh;
     padding-top: 20px;
   }
+
   .about_section1 .inner_content {
     flex-direction: column;
   }
+
   .about_section1 .inner_content .about_me {
     width: 100%;
   }
+
   .about_section1 .inner_content .about_image {
     width: 100%;
     margin-top: 30px;
   }
+
   .about_section1 .inner_content .about_image img {
     width: 100%;
   }
+
   .about_section1 .inner_content .about_me h4 {
     font-size: 16px;
   }
+
   .about_section1 .inner_content .about_me h1 {
     font-size: 32px;
     margin-bottom: 10px;
     margin-top: 10px;
   }
+
   .about_section1 .inner_content .about_me p {
     font-size: 14px;
     margin-top: 10px;
   }
+
   .about_section1 .inner_content .about_me .auto_type {
     font-size: 30px;
   }
+
   .about_section1 .inner_content .about_me ul {
     width: 50%;
   }
+
   .about_section2 .my_items {
     border-radius: 20px;
     padding: 30px 20px;
     gap: 30px;
     width: 92%;
   }
+
   .card {
     width: 100%;
     height: 550px;
   }
+
   .about_section4_about_me .images {
     width: 100%;
   }
+
   .about_section4_about_me .images img {
     width: 100%;
   }
+
   .about_section4_about_me .about {
     width: 100%;
     margin-top: 40px;
   }
+
   .blog_card {
     width: 100%;
     height: 500px;
   }
+
   .info h1 {
     font-size: 20px;
   }
+
   .blog_card_small {
     width: 48%;
   }
+
   .blog_card_small h3 {
     font-size: 14px;
   }
+
   .info p {
     font-size: 14px;
   }
+
   .project_title {
     font-size: 20px;
   }
+
   .project_type {
     font-size: 16px;
   }
+
   .technologies {
     margin: 4px;
   }
+
   .contact_page {
     width: 100%;
   }
+
   .info_card {
     margin-bottom: 18px;
   }
+
   .contact_card {
     width: 100%;
   }
+
   .footer_outer {
     min-height: 24vh;
   }
+
   .footer {
     width: 90%;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
+
   .footer_ul {
     width: 100%;
     margin-top: 10px;
@@ -655,42 +755,53 @@ header nav button {
   .header {
     width: 100%;
   }
+
   .card {
     width: 100%;
     height: 550px;
   }
+
   .navigation_list li #nav_icon {
     display: block;
   }
+
   .project_title {
     font-size: 16px;
   }
+
   .project_type {
     font-size: 12px;
   }
+
   .technologies {
     margin: 2px;
     padding: 4px 10px;
     font-size: 14px;
   }
+
   .contact_page {
     width: 100%;
   }
+
   .info_card {
     margin-bottom: 18px;
   }
+
   .contact_card {
     width: 100%;
   }
+
   .footer_outer {
     min-height: 24vh;
   }
+
   .footer {
     width: 90%;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
+
   .footer_ul {
     width: 100%;
     margin-top: 10px;

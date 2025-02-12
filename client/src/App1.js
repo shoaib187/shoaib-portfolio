@@ -1,60 +1,48 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
-import axios from "axios";
+// import { TextField, Button, List, ListItem } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 
-const socket = io("http://localhost:8000");
+const socket = io("http://localhost:5000"); // Backend URL
 
-function App1({ userId, username, receiverId }) {
+function App1() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    // Fetch chat history
-    axios
-      .get(`http://localhost:8000/messages?user1=${userId}&user2=${receiverId}`)
-      .then((res) => setMessages(res.data))
-      .catch((err) => console.log(err));
-
-    // Listen for new messages
-    socket.on("receiveMessage", (msg) => {
-      if (msg.receiverId === userId) {
-        setMessages((prevMessages) => [...prevMessages, msg]);
-      }
+    // Listen for incoming messages
+    socket.on("receive_message", (data) => {
+      setMessages((prev) => [...prev, data]);
     });
-
-    return () => {
-      socket.off("receiveMessage");
-    };
-  }, [userId, receiverId]);
+  }, []);
 
   const sendMessage = () => {
-    if (message.trim()) {
-      const newMessage = { senderId: userId, receiverId, content: message };
-      socket.emit("sendMessage", newMessage);
-      setMessages((prev) => [...prev, newMessage]);
-      setMessage("");
-    }
+    const messageData = {
+      text: message,
+      senderId: "user123", // Replace with logged-in user ID
+      recipientId: "user456", // Replace with recipient ID
+    };
+    socket.emit("send_message", messageData);
+    setMessage("");
   };
 
   return (
-    <div>
-      <div className="message-container">
+    <div className="App">
+      <h1>Chat App</h1>
+      <List>
         {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={msg.senderId === userId ? "sent" : "received"}
-          >
-            {msg.content}
-          </div>
+          <ListItem key={index}>{msg.text}</ListItem>
         ))}
-      </div>
-      <input
-        type="text"
+      </List>
+      <TextField
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Type a message..."
       />
-      <button onClick={sendMessage}>Send</button>
+      <Button onClick={sendMessage}>Send</Button>
     </div>
   );
 }

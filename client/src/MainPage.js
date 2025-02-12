@@ -7,8 +7,6 @@ import {
   FiGithub,
   FiInstagram,
   FiLinkedin,
-  FiMenu,
-  FiTwitter,
 } from "react-icons/fi";
 import emailjs from "emailjs-com";
 import ProjectCard from "./custom/ProjectCard";
@@ -293,6 +291,14 @@ function MainPage() {
     notify();
   };
 
+  const phoneNumber = "923248052718";
+  const message = encodeURIComponent("Hello! I need help.");
+
+  const handleWhatsAppClick = () => {
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="App">
       <Header />
@@ -348,7 +354,7 @@ function MainPage() {
                 </a>
               </li>
               <li className="w-14 h-14" class="li">
-                <a href="#twitter">
+                <a href="/" onClick={handleWhatsAppClick}>
                   <SiWhatsapp size={22} className="icon" />
                 </a>
               </li>
@@ -726,7 +732,7 @@ function MainPage() {
               >
                 Send Message
               </button>
-              {/* {status && <p className="mt-4">{status}</p>}{" "} */}
+              {status && <p className="mt-4">{status}</p>}{" "}
               {/* Show status message */}
             </form>
           </div>

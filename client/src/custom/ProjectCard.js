@@ -11,7 +11,7 @@ export default function ProjectCard({
   buttonText,
 }) {
   return (
-    <div class="blog_card">
+    <div class="blog_card" onClick={onClick}>
       <div className="w-full h-64 overflow-hidden rounded-lg">
         <img
           src={image}
