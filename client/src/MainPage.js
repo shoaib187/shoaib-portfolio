@@ -499,23 +499,25 @@ function MainPage() {
               positive impact on society. I Love to join you to improve my
               development skills and communication skills.
             </p>
-            <button
-              onClick={handleDownload}
-              style={{
-                width: 140,
-                height: 45,
-                backgroundColor: "#fd246c",
-                border: "none",
-                outline: "none",
-                borderRadius: 4,
-                color: "#fff",
-                fontSize: 16,
-                cursor: "pointer",
-                marginTop: 20,
-              }}
-            >
-              Download CV
-            </button>
+            <a href="./cv.pdf" download="Muhammad_Shoaib_CV.pdf">
+              <button
+                // onClick={handleDownload}
+                style={{
+                  width: 140,
+                  height: 45,
+                  backgroundColor: "#fd246c",
+                  border: "none",
+                  outline: "none",
+                  borderRadius: 4,
+                  color: "#fff",
+                  fontSize: 16,
+                  cursor: "pointer",
+                  marginTop: 20,
+                }}
+              >
+                Download CV
+              </button>
+            </a>
           </div>
         </div>
       </section>
