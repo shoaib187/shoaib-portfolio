@@ -32,6 +32,7 @@ import TestimonialCard from "./custom/TestimonialCard";
 import { ChatComponent } from "./custom/ChatComponent";
 import { image } from "./components/constants/images";
 import Header from "./custom/Header";
+import AdBanner from "./AdBanner";
 
 function MainPage() {
   const [achievements, setAchievements] = useState([
@@ -799,6 +800,7 @@ function MainPage() {
           <MdClose size={20} />
         </button>
       )}
+      <AdBanner />
     </div>
   );
 }

@@ -101,7 +101,7 @@ export default function Header() {
                   size={18}
                   className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
                 />
-                <Link to={"/templates"}>Templates</Link>
+                <Link to={"/templates"}>Projects</Link>
               </li>
             </ul>
             <Link
@@ -171,7 +171,7 @@ export default function Header() {
           </li>
           <li className="flex items-center">
             <MdOutlineSmartDisplay size={18} className="mr-2" />
-            <Link to={"/templates"}>Templates</Link>
+            <Link to={"/templates"}>Projects</Link>
           </li>
         </ul>
       </div>
