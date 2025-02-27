@@ -8,7 +8,6 @@ import { ReactTyped } from "react-typed";
 import { FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { CounterProvider } from "./components/context/CounterContext";
 import Templates from "./Templates";
-import StripePayment from "./custom/StripePayment";
 
 const LoadingIndicator = () => {
   return (
