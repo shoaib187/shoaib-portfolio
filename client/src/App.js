@@ -121,7 +121,7 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<WelcomePage />} />
+            <Route path="/" element={<MainPage />} />
             <Route path="/home/*" element={<MainPage />} />
             <Route path="/templates" element={<Templates />} />
           </Routes>
