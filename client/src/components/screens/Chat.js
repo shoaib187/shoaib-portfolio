@@ -1,33 +1,20 @@
 import "../../App.css";
 import React, { useRef, useState } from "react";
-import { FiChevronLeft, FiSearch, FiSend } from "react-icons/fi";
+import { FiChevronLeft, FiSend } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import ChatBubble from "../../custom/ChatBubble";
-import { MdEmojiEmotions, MdEmojiSymbols } from "react-icons/md";
+import { MdEmojiEmotions } from "react-icons/md";
 import EmojiPicker from "emoji-picker-react";
+import axios from "axios";
 export default function Chat() {
   const location = useLocation();
   const navigate = useNavigate();
   const item = location.state;
-  console.log(item);
-
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  // const [message, setMessage] = useState("");
-  // const [chosenEmojis, setChosenEmojis] = useState([]);
-  // const handlePickEmoji = (objectSelected) => {
-  //   setChosenEmojis([...chosenEmojis, objectSelected.emoji]);
-  // };
 
-  // const handleSendMessage = () => {
-  //   const fullMessage = `${message} ${chosenEmojis.join(" ")}`;
-  //   console.log("Message to send:", fullMessage);
-  // };
-  // const combinedContent = `${message} ${chosenEmojis.join(" ")}`;
-
-  // const handleChange = (e) => {
-  //   setMessage(e.target.value);
-  // };
-
+  const [messages, setMessages] = useState([
+    { text: "Hi! How can I help you?", sender: "bot" },
+  ]);
   const [message, setMessage] = useState("");
   const inputRef = useRef(null);
 
@@ -50,7 +37,14 @@ export default function Chat() {
 
   // Handle text field changes
   const handleChange = (e) => {
+    e.preventDefault();
     setMessage(e.target.value);
+  };
+
+  const handleSendMessage = () => {
+    setMessage("");
+    setMessages([...messages, message]);
+    // console.log("message is ", message);
   };
 
   return (
@@ -58,7 +52,7 @@ export default function Chat() {
       <div className="flex w-full items-center bg-green-500 py-3 px-2 sticky top-0 left-0 right-0">
         <div
           className="flex items-center cursor-pointer"
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/")}
         >
           <FiChevronLeft size={24} color="#fff" />
           <img
@@ -74,10 +68,10 @@ export default function Chat() {
           <p className="text-white text-xs">Online</p>
         </div>
       </div>
-      <div className="w-full pt-4 h-full bg-slate-50">
+      <div className="w-full pt-4 min-h-max bg-slate-50">
         <>
           <div className="px-4 flex flex-col">
-            {item?.messages?.map((item, index) => (
+            {messages?.map((item, index) => (
               <ChatBubble item={item} key={index} />
             ))}
           </div>
@@ -94,10 +88,10 @@ export default function Chat() {
                 value={message}
                 onChange={handleChange}
                 type="text"
-                className="flex-1 h-full outline-none pr-2"
+                className="flex-1 h-full outline-none pr-2 z-10"
               />
               <div
-                // onClick={handleSendMessage}
+                onClick={handleSendMessage}
                 className="flex items-center justify-center bg-green-600 w-12 h-full cursor-pointer"
               >
                 <FiSend size={20} color="#fff" />

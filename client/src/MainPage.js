@@ -320,13 +320,13 @@ function MainPage() {
             </h1>
             <ReactTyped
               strings={[
-                "Welcome to our site!",
-                "Front-End-Developer!",
-                "React Js Developer!",
-                "Web Developer!",
+                "Welcome to my site!",
                 "React Native Developer!",
+                "React Js Developer!",
+                "Front-End-Developer!",
                 "Node Js Developer!",
                 "MERN Stack Developer!",
+                "Web Developer!",
               ]}
               typeSpeed={80}
               backSpeed={80}
@@ -417,9 +417,9 @@ function MainPage() {
           <h1 className="font-bold text-6xl text-blue-950">What Do I Offer?</h1>
         </div>
         <div class="flex flex-wrap items-center justify-between w-11/12">
-          {achievements.map((item) => {
+          {achievements.map((item, index) => {
             return (
-              <div class="card">
+              <div class="card" key={`achievement ${index}`}>
                 <div class="top">
                   <div
                     className="absolute w-10 h-16 bg-slate-300 top-0 left-12"
@@ -490,7 +490,7 @@ function MainPage() {
               I have a deep interest in web development i made
               <span style={{ background: "yellow", fontWeight: 600 }}>
                 4+ live projects
-              </span>
+              </span>{" "}
               for a company and my clients. I wish to use my technical acumen to
               contribute to a team that works and scales and also creates a
               positive impact on society. I Love to join you to improve my
@@ -575,23 +575,24 @@ function MainPage() {
         {/* top_bar */}
         <div class="top_bar flex-col min-h-60 flex items-center justify-center">
           <h2 className="font-semibold text-2xl" style={{ color: "#fd246c" }}>
-            Why Choose Me{" "}
+            Why Choose Me
           </h2>
           <h1 className="text-5xl font-bold mt-2 text-blue-950">
             My Top Skills
           </h1>
         </div>
         <div class="flex flex-wrap justify-between items-center w-11/12">
-          {my_skills.map((item) => (
+          {my_skills.map((item, index) => (
             <Skills
               image={item?.image}
               title={item?.title}
               onClick={() => {}}
+              key={`image-${index}`}
             />
           ))}
         </div>
       </section>
-      {/* about_section5 */}
+      {/* testimonial */}
       <section
         id="testimonial"
         class="flex flex-col items-center justify-center"
@@ -800,7 +801,7 @@ function MainPage() {
           <MdClose size={20} />
         </button>
       )}
-      <AdBanner />
+      {/* <AdBanner /> */}
     </div>
   );
 }

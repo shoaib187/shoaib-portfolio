@@ -43,6 +43,7 @@ export default function ProjectCard({
           <p
             className="technologies px-4 py-1 my-1 bg-slate-200 rounded-full mr-2"
             style={{ fontWeight: 500 }}
+            key={`para ${index}`}
           >
             {item}
           </p>

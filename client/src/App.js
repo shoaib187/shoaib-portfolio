@@ -8,6 +8,7 @@ import { ReactTyped } from "react-typed";
 import { FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { CounterProvider } from "./components/context/CounterContext";
 import Templates from "./Templates";
+import { ChatComponent } from "./custom/ChatComponent";
 
 const LoadingIndicator = () => {
   return (
@@ -121,8 +122,8 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/home/*" element={<MainPage />} />
+            <Route path="/*" element={<MainPage />} />
+            {/* <Route path="/home/*" element={<MainPage />} /> */}
             <Route path="/templates" element={<Templates />} />
           </Routes>
         </BrowserRouter>

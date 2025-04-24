@@ -40,6 +40,8 @@ import tailwind_icon from "../../assets/images/tailwind-css-icon.9c4bdccf.svg";
 import doctor from "../../assets/images/doctor.jpg";
 import music from "../../assets/images/music.jpg";
 import dictionary from "../../assets/images/dictionary.jpg";
+import chatbot from "../../assets/images/chatbot.png";
+import tolgamendi from "../../assets/images/e9919a4ce25b1865170c08a779b9c1e5.jpg";
 
 export const image = {
   user_img,
@@ -86,4 +88,6 @@ export const image = {
   doctor,
   music,
   dictionary,
+  tolgamendi,
+  chatbot,
 };

@@ -14,7 +14,7 @@ const TestimonialCard = memo(({ image, name, country, review }) => {
             borderRadius: 100,
             objectFit: "cover",
           }}
-          alt="image not found"
+          alt="not found"
         />
         <div className={"ml-4 text-left"}>
           <h1 className="font-semibold text-lg text-blue-950">{name}</h1>
