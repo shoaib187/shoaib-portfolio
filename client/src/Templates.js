@@ -43,6 +43,7 @@ export default function Templates() {
   ]);
   return (
     <div>
+      <Header />
       <section id="portfolio" class="flex flex-col items-center justify-center">
         {/* top_bar */}
         <div class="top_bar flex-col min-h-60 flex items-center justify-center">

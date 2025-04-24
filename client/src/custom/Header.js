@@ -52,7 +52,9 @@ export default function Header() {
                   size={18}
                   className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
                 />
-                <a href="#home">Home</a>
+                <Link to={"/home"}>
+                  <a href="#home">Home</a>
+                </Link>
               </li>
               <li className="flex items-center">
                 <MdOutlineBuild
@@ -143,7 +145,9 @@ export default function Header() {
         <ul className="flex flex-col p-4 space-y-4">
           <li className="flex items-center">
             <MdOutlineHome size={18} className="mr-2" />
-            <a href="#home">Home</a>
+            <Link to={"/home"}>
+              <a href="#home">Home</a>
+            </Link>
           </li>
           <li className="flex items-center">
             <MdOutlineBuild size={18} className="mr-2" />
