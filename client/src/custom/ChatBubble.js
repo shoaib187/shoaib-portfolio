@@ -13,7 +13,7 @@ export default function ChatBubble({ item }) {
         style={{ color: item?.id % 2 === 0 ? "black" : "#fff" }}
         className="font-medium text-sm"
       >
-        {item?.text}
+        {item}
       </p>
     </div>
   );
