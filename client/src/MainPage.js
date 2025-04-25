@@ -786,8 +786,9 @@ function MainPage() {
       >
         {value === 1 ? <ChatComponent /> : null}
       </div>
-      {value === 0 ? (
+      {/* {value === 0 ? (
         <button
+          disabled={true}
           onClick={() => setValue(1)}
           className="w-12 h-12 bg-green-600 rounded-full fixed bottom-3 right-3"
         >
@@ -800,7 +801,7 @@ function MainPage() {
         >
           <MdClose size={20} />
         </button>
-      )}
+      )} */}
       {/* <AdBanner /> */}
     </div>
   );

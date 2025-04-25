@@ -1,11 +1,12 @@
 import "../../App.css";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiSend } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import ChatBubble from "../../custom/ChatBubble";
 import { MdEmojiEmotions } from "react-icons/md";
 import EmojiPicker from "emoji-picker-react";
-import axios from "axios";
+import { responseToMessage } from "../constants/db";
+
 export default function Chat() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -35,6 +36,18 @@ export default function Chat() {
     }, 0);
   };
 
+  // Create a reference for the last message
+  const lastMessageRef = useRef(null);
+  // Scroll to the last message whenever the messages state changes
+  useEffect(() => {
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }
+  }, [messages]);
+
   // Handle text field changes
   const handleChange = (e) => {
     e.preventDefault();
@@ -42,10 +55,30 @@ export default function Chat() {
   };
 
   const handleSendMessage = () => {
+    let newMessage = { text: message, sender: "user" };
+    let botMessage = responseToMessage(message);
+    setMessages((preMessages) => [
+      ...preMessages,
+      newMessage,
+      { text: botMessage?.text, sender: "bot" },
+    ]);
     setMessage("");
-    setMessages([...messages, message]);
-    // console.log("message is ", message);
   };
+
+  useEffect(() => {
+    // Dynamically add the Tidio script
+    const script = document.createElement("script");
+    script.src = "//code.tidio.co/t8o0vhjuo6yyahgykzfoc8pbmt5w1dq8.js";
+    script.async = true;
+
+    // Append the script to the document body (or you can append it to a specific element if needed)
+    document.body.appendChild(script);
+
+    // Optional: Clean up by removing the script when the component is unmounted
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="chat w-full overflow-y-scroll h-full relative flex flex-col items-center">
@@ -74,6 +107,7 @@ export default function Chat() {
             {messages?.map((item, index) => (
               <ChatBubble item={item} key={index} />
             ))}
+            <div ref={lastMessageRef} />
           </div>
           <div className="bg-slate-50 px-4 py-2 sticky bottom-0 left-0 right-0 border-t border-t-slate-100">
             <div className="flex w-full items-center justify-between h-10 border border-slate-200  rounded-full overflow-hidden">
