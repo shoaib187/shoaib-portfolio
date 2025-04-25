@@ -33,6 +33,7 @@ import { ChatComponent } from "./custom/ChatComponent";
 import { image } from "./components/constants/images";
 import Header from "./custom/Header";
 import AdBanner from "./AdBanner";
+import Chat from "./components/screens/Chat";
 
 function MainPage() {
   const [achievements, setAchievements] = useState([
@@ -784,11 +785,13 @@ function MainPage() {
         }`}
         style={{ right: 20, bottom: "5%" }}
       >
-        {value === 1 ? <ChatComponent /> : null}
+        {/* {value === 1 ? <ChatComponent /> : null} */}
+        {value === 0 ? <Chat /> : null}
       </div>
+
       {/* {value === 0 ? (
         <button
-          disabled={true}
+          // disabled={true}
           onClick={() => setValue(1)}
           className="w-12 h-12 bg-green-600 rounded-full fixed bottom-3 right-3"
         >
