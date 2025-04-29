@@ -106,6 +106,7 @@ function MainPage() {
       title: "Online books shop buy books online",
       subtitle: "Books Shop",
       technologies: ["HTML5", "CSS3", "Javascript"],
+      link: "https://bookshop-kohl.vercel.app/",
     },
     {
       image: image.project4,
