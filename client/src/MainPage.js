@@ -358,7 +358,7 @@ function MainPage() {
                 </a>
               </li>
               <li className="w-14 h-14" class="li">
-                <a href="https://www.linkedin.com/in/muhammad-shoaib-b71247209?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                <a href="https://www.linkedin.com/in/shoaib-r-b71247209">
                   <FiLinkedin size={22} className="icon" />
                 </a>
               </li>
