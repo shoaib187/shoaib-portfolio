@@ -106,11 +106,7 @@ export default function Header() {
                 <Link to={"/templates"}>Projects</Link>
               </li>
             </ul>
-            <Link
-              to={
-                "https://www.upwork.com/freelancers/muhammadshoaib122?mp_source=share"
-              }
-            >
+            <Link to={"https://www.upwork.com/freelancers/~01c2b7acdb7eb0c312"}>
               <button>Hire Me</button>
             </Link>
           </>
