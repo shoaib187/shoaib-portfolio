@@ -12,8 +12,9 @@ import {
   MdWorkOutline,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { navLinks } from "../../constants/db";
 
-export default function Header() {
+export default function Headers() {
   const [visible, setVisible] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
 
@@ -37,7 +38,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header flex items-center justify-center w-full sticky z-10 py-3">
+    <header className="header flex items-center justify-center w-full sticky z-10 py-3 border-b border-b-slate-100">
       <nav className="flex w-11/12 justify-between items-center">
         <h1 className="text-4xl">
           <span style={{ color: "red", fontFamily: "cursive" }}>M .</span>S
@@ -47,64 +48,19 @@ export default function Header() {
         {isDesktop ? (
           <>
             <ul className="flex items-center w-2/3 justify-between">
-              <li className="flex items-center">
-                <MdOutlineHome
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <Link to={"/home"}>
-                  <a href="#home">Home</a>
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <MdOutlineBuild
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <a href="#services">Services</a>
-              </li>
-              <li className="flex items-center">
-                <MdPersonOutline
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <a href="#about">About</a>
-              </li>
-              <li className="flex items-center">
-                <MdWorkOutline
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <a href="#portfolio">Portfolio</a>
-              </li>
-              <li className="flex items-center">
-                <MdOutlineBuildCircle
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <a href="#skills">Skills</a>
-              </li>
-              <li className="flex items-center">
-                <MdStarOutline
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <a href="#testimonial">Testimonial</a>
-              </li>
-              <li className="flex items-center">
-                <MdMailOutline
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <a href="#contact">Contact us</a>
-              </li>
-              <li className="flex items-center">
-                <MdOutlineSmartDisplay
-                  size={18}
-                  className={`mr-2 ${isDesktop ? "hidden" : "block"}`}
-                />
-                <Link to={"/templates"}>Projects</Link>
-              </li>
+              {navLinks?.map((item, index) => (
+                <li className="flex items-center" key={`header_index-${index}`}>
+                  {item?.type === "route" ? (
+                    <Link
+                      to={`${item?.type === "route" ? item?.to : item?.href}`}
+                    >
+                      <a href={`${item?.href}`}>{item?.name}</a>
+                    </Link>
+                  ) : (
+                    <a href={`${item?.href}`}>{item?.name}</a>
+                  )}
+                </li>
+              ))}
             </ul>
             <Link to={"https://www.upwork.com/freelancers/~01c2b7acdb7eb0c312"}>
               <button>Hire Me</button>

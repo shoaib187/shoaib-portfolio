@@ -23,6 +23,7 @@ import project3 from "../../assets/images/project3.png";
 import project4 from "../../assets/images/project4.png";
 import project5 from "../../assets/images/project5.png";
 import project6 from "../../assets/images/project6.png";
+import project7 from "../../assets/images/project78png.png";
 import javascript from "../../assets/images/javascript.png";
 import typescript from "../../assets/images/typescript.png";
 import firebase from "../../assets/images/firebase.png";
@@ -55,6 +56,7 @@ export const image = {
   project4,
   project5,
   project6,
+  project7,
   projects,
   coding,
   css,

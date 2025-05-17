@@ -1,3 +1,5 @@
+import { image } from "./images";
+
 export const responseToMessage = (message) => {
   const greetings = ["hello", "hy", "hi", "hello"];
   const normalizedMessage = message.toLowerCase();
@@ -405,3 +407,198 @@ export const responseToMessage = (message) => {
     text: "Sorry! I don't know how to respond to that message.",
   };
 };
+
+export const project = [
+  {
+    image: image.project7,
+    title: "Wanderlust a traveler website",
+    subtitle: "Traveler",
+    technologies: ["React.js", "Tailwind.css", "Redux toolkit", "Typescript"],
+    link: "https://traveler-pearl.vercel.app/",
+  },
+  {
+    image: image.project1,
+    title: "Online auto shop and spare parts",
+    subtitle: "Business website",
+    technologies: ["HTML5", "CSS3", "Javascript"],
+    link: "https://auto-shop-topaz.vercel.app",
+  },
+  {
+    image: image.project2,
+    title: "Buy furniture online from your home",
+    subtitle: "E-Commerce website",
+    technologies: ["HTML5", "CSS3", "Javascript"],
+    link: "https://e-commerce-furniture-website-kappa.vercel.app",
+  },
+  {
+    image: image.project3,
+    title: "Online books shop buy books online",
+    subtitle: "Books Shop",
+    technologies: ["HTML5", "CSS3", "Javascript"],
+    link: "https://bookshop-kohl.vercel.app/",
+  },
+  {
+    image: image.project4,
+    title: "Web Developer portfolio website",
+    subtitle: "Portfolio website",
+    technologies: ["HTML5", "CSS3", "Javascript"],
+  },
+  {
+    image: image.project5,
+    title: "Electrician portfolio website",
+    subtitle: "Portfolio website",
+    technologies: ["HTML5", "CSS3", "Javascript"],
+  },
+  {
+    image: image.project6,
+    title: "American model star portfolio website",
+    subtitle: "Portfolio website",
+    technologies: ["HTML5", "CSS3", "Javascript"],
+    link: "https://modelstar-portfolio.vercel.app",
+  },
+];
+
+export const achievements = [
+  {
+    image: image.coding,
+    title: "Web Development",
+    description:
+      "For web development, we create stunning, user-friendly websites tailored to your brand and goals. Our expertise in coding, design, and optimization ensures a seamless online presence that captivates and converts visitors.",
+    elipse: image.elipse1,
+    background: "#fd246c",
+  },
+  {
+    image: image.design,
+    title: "Creative Design",
+    description:
+      "With creative design, we bring your vision to life through captivating visuals and branding. Our artistic prowess transforms ideas into eye-catching graphics, logos, and marketing materials that resonate with your audience and elevate your brand identity.",
+    elipse: image.elipse2,
+    background: "#48cda0",
+  },
+  {
+    image: image.projects,
+    title: "Project Consultancy",
+    description:
+      "In project consultancy, we serve as your strategic partner, offering expert guidance to navigate complex endeavors. Our tailored solutions and insights ensure seamless project execution, cost-efficiency, and optimal results, empowering your business to thrive.",
+    elipse: image.elipse3,
+    background: "#177fff",
+  },
+  {
+    image: image.services,
+    title: "Exceptional Services",
+    description:
+      "Our focus on excellence shines through in every project. We meticulously plan, design, and develop solutions that exceed expectations. Trust us for flawlessly executed projects that deliver tangible results and drive success.",
+    elipse: image.elipse4,
+    background: "#e6bc14",
+  },
+  {
+    image: image.idea,
+    title: "Awesome Idea",
+    description:
+      "With Awesome Idea, we transform your innovative concepts into reality. Our creative team refines, prototypes, and brings your ideas to life, ensuring they're not just great but truly exceptional. Your vision, our expertise, limitless possibilities.",
+    elipse: image.elipse5,
+    background: "#e614df",
+  },
+  {
+    image: image.development,
+    title: "Development Design",
+    description:
+      "Development Design is our specialty. We seamlessly blend development and design, crafting websites and applications that are not only functional but also visually appealing. Our holistic approach ensures a harmonious and engaging user experience.",
+    elipse: image.elipse6,
+    background: "#14dfe6",
+  },
+];
+
+export const appProjects = [
+  {
+    image: image.doctor,
+    title: "Doctor Appointment ",
+    subtitle: "Appointment App",
+    technologies: ["React Native", "Node.js", "Express.js", "MongoDB", "Redux"],
+    link: "https://apkpure.com/p/com.doctorappointment",
+  },
+  {
+    image: image.dictionary,
+    title: "Eng-Urdu Dictionary",
+    subtitle: "Education",
+    technologies: ["Tailwind.css", "React Native", "AdMob", "Redux toolkit"],
+    link: "https://e-commerce-furniture-website-kappa.vercel.app",
+  },
+  {
+    image: image.music,
+    title: "Music Player App",
+    subtitle: "Music, Sound player",
+    technologies: ["React Native", "Spotify API", "Tailwind.css"],
+  },
+];
+
+export const my_skills = [
+  {
+    image: image.react_icon,
+    title: "React Js",
+  },
+  {
+    image: image.tailwind_icon,
+    title: "Tailwind Css",
+  },
+
+  {
+    image: image.javascript,
+    title: "Javascript",
+  },
+  {
+    image: image.typescript,
+    title: "Typescript",
+  },
+  {
+    image: image.html,
+    title: "HTML5",
+  },
+  {
+    image: image.css,
+    title: "CSS3",
+  },
+  {
+    image: image.vscode,
+    title: "VSCode",
+  },
+  {
+    image: image.firebase,
+    title: "Firebase",
+  },
+  {
+    image: image.material_icon,
+    title: "Material UI",
+  },
+  {
+    image: image.reactnative,
+    title: "React Native",
+  },
+  {
+    image: image.mongodb,
+    title: "MongoDB",
+  },
+  {
+    image: image.nodejs,
+    title: "Node.js",
+  },
+  {
+    image: image.express,
+    title: "Express.js",
+  },
+  {
+    image: image.redux,
+    title: "Redux",
+  },
+];
+
+export const navLinks = [
+  { name: "Home", type: "route", to: "/home", href: "#home" },
+  { name: "Services", type: "anchor", href: "#services" },
+  { name: "About", type: "anchor", href: "#about" },
+  { name: "Portfolio", type: "anchor", href: "#portfolio" },
+  { name: "Skills", type: "anchor", href: "#skills" },
+  { name: "Testimonial", type: "anchor", href: "#testimonial" },
+  { name: "Contact us", type: "anchor", href: "#contact" },
+  { name: "Projects", type: "route", to: "/templates" },
+];

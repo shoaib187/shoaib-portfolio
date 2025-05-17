@@ -15,7 +15,7 @@ export default function ProjectCard({
       <div className="w-full h-64 overflow-hidden rounded-lg">
         <img
           src={image}
-          alt=""
+          alt="image not found"
           style={{
             width: "100%",
             borderRadius: 10,
