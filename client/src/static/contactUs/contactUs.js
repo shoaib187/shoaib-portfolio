@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { MdSend } from "react-icons/md";
-import { toast, ToastContainer } from "react-toastify";
+
 import Chat from "../../components/screens/Chat";
 import emailjs from "emailjs-com";
 import {
@@ -8,16 +7,14 @@ import {
   LiaMailBulkSolid,
   LiaPhoneVolumeSolid,
 } from "react-icons/lia";
+
+import toast, { Toaster } from "react-hot-toast";
+import { CgCross } from "react-icons/cg";
 // import { ChatComponent } from "../../custom/ChatComponent";
 
 const ContactUs = React.memo(() => {
   const value = 0;
   const [status, setStatus] = useState("");
-  const notify = () =>
-    toast.success(status, {
-      icon: <MdSend />,
-      type: "success",
-    });
 
   const [formData, setFormData] = useState({
     to_name: "",
@@ -37,10 +34,12 @@ const ContactUs = React.memo(() => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { to_name, from_email, phone, message } = formData;
+
     if (!to_name || !from_email || !phone || !message) {
-      alert("Please fill all required fields to send messages");
+      toast.error("Please fill all required fields");
       return;
     }
+
     const templateParams = {
       to_name,
       from_email,
@@ -50,32 +49,40 @@ const ContactUs = React.memo(() => {
 
     emailjs
       .send(
-        "service_7gx3ul6", // Replace with your Service ID from EmailJS
-        "template_sz9s69p", // Replace with your Template ID from EmailJS
-        templateParams, // Target the form to send form data
-        "qCtVYXrdJoqEWJ-xt" // Replace with your User ID from EmailJS
+        "service_7gx3ul6",
+        "template_sz9s69p",
+        templateParams,
+        "qCtVYXrdJoqEWJ-xt"
       )
       .then(
-        (result) => {
-          setStatus(200);
-          console.log("result", result);
+        () => {
+          toast.success("Message sent successfully!");
+          setFormData({
+            to_name: "",
+            from_email: "",
+            phone: "",
+            message: "",
+          });
         },
         (error) => {
-          // console.log(error.text);
-          setStatus("Failed to send email. Please try again later.");
+          console.error("Error sending email:", error);
+          toast.success("Failed to send email.");
         }
       );
-
-    notify();
   };
+
   return (
     <>
-      <ToastContainer
-        icon={true}
-        progressStyle={{ background: "#fe3377" }}
-        pauseOnHover={true}
-        toastStyle={{ background: "#fff", color: "red" }}
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          duration: 5000,
+          removeDelay: 1000,
+        }}
       />
+
       <div
         className={`chat_section flex flex-col items-center h-5/6 fixed bg-white overflow-hidden rounded-md  shadow-xl z-10 transition-all duration-500 bottom-20 ${
           value === 1
@@ -171,8 +178,6 @@ const ContactUs = React.memo(() => {
               >
                 Send Message
               </button>
-              {status && <p className="mt-4">{status}</p>}{" "}
-              {/* Show status message */}
             </form>
           </div>
         </div>

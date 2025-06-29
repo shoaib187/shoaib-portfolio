@@ -47,28 +47,34 @@ export default function Testimonial() {
           swipeable={true}
         >
           <TestimonialCard
-            image={image.image20}
-            name="Shamsuddin Malik"
-            country={"USA Client"}
-            review="Highly satisfied with the services provided by Muhammad Shoaib. Professionalism, expertise, and attention to detail were top-notch. Exceeded expectations, delivering a high-quality product within agreed timeframe. Clear, prompt communication and valuable insights. Exceptional craftsmanship and attention to detail. Highly recommend!"
+            image={
+              "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+            }
+            name="Sarah M., Marketing Director at NovaTech"
+            country={"USA"}
+            review="A pleasure to work with! Shoaib not only delivered the project ahead of schedule but also added thoughtful improvements we hadn’t considered. Truly impressed with the professionalism and communication."
           />
           <TestimonialCard
-            image={image.image3}
-            name="Sobia Yaseen"
-            country={"React Js developer"}
-            review="Muhammad Shoaib was incredibly responsive, even though we live in very different time zones. I had a lot of small adjustments I asked him to make and he made all of them very quickly. I highly recommend him. Best Regards, Sobia Yaseen"
+            image={"https://images.unsplash.com/photo-1552058544-f2b08422138a"}
+            name="David R., Co-Founder of Breva Studios"
+            country={"England"}
+            review="Outstanding quality of work. Shoaib translated our rough vision into a fully functional, beautifully designed website. Quick response times and great attention to detail."
           />
           <TestimonialCard
-            image={image.tolga}
-            name=" Muneer Khair"
-            country={"Mk mobile detailing Owner"}
-            review="I am thrilled with the outstanding service I received from Muhammad Shoaib. From start to finish, the team demonstrated exceptional professionalism and expertise. They were attentive to my needs, provided regular updates, and delivered the final product ahead of schedule. The quality exceeded my expectations, and I highly recommend their services to anyone in need."
+            image={
+              "https://images.unsplash.com/photo-1527980965255-d3b416303d12"
+            }
+            name="Anna K., Project Manager at Loopline"
+            country={"United Arab Emirates"}
+            review="We hired Shoaib for a front-end overhaul. The result exceeded expectations—modern, responsive, and clean UI. Definitely hiring again!"
           />
           <TestimonialCard
-            image={image.image20}
-            name="Emily Chen"
-            country={"Cosmetics & Beauty Salon"}
-            review="I have a deep interest in web development i made 90+ live projects for a company and my clients. I wish to use my technical acumen to contribute to a team that works and scales and also creates a positive impact on society. I Love to join you to improve my development skills and communication skills."
+            image={
+              "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+            }
+            name=" Liam T., CTO at Zentrico Solutions"
+            country={"Mexico"}
+            review="I’ve worked with many developers over the years. Shoaib stands out for being efficient, creative, and truly invested in the success of our product."
           />
         </Carousel>
       </div>
