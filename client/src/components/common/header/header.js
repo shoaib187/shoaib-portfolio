@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { CgClose } from "react-icons/cg";
+import { CgClose, CgHomeAlt, CgLaptop } from "react-icons/cg";
 import { FiMenu } from "react-icons/fi";
 import {
   MdMailOutline,
+  MdMiscellaneousServices,
   MdOutlineBuild,
   MdOutlineBuildCircle,
   MdOutlineHome,
   MdOutlineSmartDisplay,
   MdPersonOutline,
+  MdReportGmailerrorred,
   MdStarOutline,
   MdWorkOutline,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { navLinks } from "../../constants/db";
+import { LiaServicestack } from "react-icons/lia";
 
 export default function Headers() {
   const [visible, setVisible] = useState(false);
@@ -47,7 +50,7 @@ export default function Headers() {
         {/* Desktop Navigation */}
         {isDesktop ? (
           <>
-            <ul className="flex items-center w-2/3 justify-between">
+            <ul className="flex items-center w-2/3 lg:max-w-[800px] justify-between">
               {navLinks?.map((item, index) => (
                 <li className="flex items-center" key={`header_index-${index}`}>
                   {item?.type === "route" ? (
@@ -96,13 +99,13 @@ export default function Headers() {
         </div>
         <ul className="flex flex-col p-4 space-y-4">
           <li className="flex items-center">
-            <MdOutlineHome size={18} className="mr-2" />
+            <CgHomeAlt size={18} className="mr-2" />
             <Link to={"/home"}>
               <a href="#home">Home</a>
             </Link>
           </li>
           <li className="flex items-center">
-            <MdOutlineBuild size={18} className="mr-2" />
+            <MdMiscellaneousServices size={18} className="mr-2" />
             <a href="#services">Services</a>
           </li>
           <li className="flex items-center">
@@ -110,7 +113,7 @@ export default function Headers() {
             <a href="#about">About</a>
           </li>
           <li className="flex items-center">
-            <MdWorkOutline size={18} className="mr-2" />
+            <CgLaptop size={18} className="mr-2" />
             <a href="#portfolio">Portfolio</a>
           </li>
           <li className="flex items-center">
@@ -126,7 +129,7 @@ export default function Headers() {
             <a href="#contact">Contact us</a>
           </li>
           <li className="flex items-center">
-            <MdOutlineSmartDisplay size={18} className="mr-2" />
+            <MdReportGmailerrorred size={18} className="mr-2" />
             <Link to={"/templates"}>Projects</Link>
           </li>
         </ul>

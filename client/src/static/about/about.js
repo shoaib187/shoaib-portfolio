@@ -16,7 +16,7 @@ const About = React.memo(() => {
   return (
     <section
       id="home"
-      class="about_section1 flex flex-wrap justify-center min-h-screen"
+      class="about_section1 flex flex-wrap justify-center lg:py-20"
     >
       {/* inner_content */}
       <div class="inner_content flex w-11/12 items-center justify-between">

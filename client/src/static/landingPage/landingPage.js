@@ -11,7 +11,7 @@ import ContactUs from "../contactUs/contactUs";
 
 export default function LandingPage() {
   return (
-    <>
+    <div>
       <About />
       <Experience />
       <Services />
@@ -21,6 +21,6 @@ export default function LandingPage() {
       <Skill />
       <Testimonial />
       <ContactUs />
-    </>
+    </div>
   );
 }
