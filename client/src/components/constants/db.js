@@ -416,13 +416,13 @@ export const project = [
     technologies: ["React.js", "Tailwind.css", "Redux toolkit", "Typescript"],
     link: "https://traveler-pearl.vercel.app/",
   },
-  {
-    image: image.project1,
-    title: "Online auto shop and spare parts",
-    subtitle: "Business website",
-    technologies: ["HTML5", "CSS3", "Javascript"],
-    link: "https://auto-shop-topaz.vercel.app",
-  },
+  // {
+  //   image: image.project1,
+  //   title: "Online auto shop and spare parts",
+  //   subtitle: "Business website",
+  //   technologies: ["HTML5", "CSS3", "Javascript"],
+  //   link: "https://auto-shop-topaz.vercel.app",
+  // },
   {
     image: image.project2,
     title: "Buy furniture online from your home",
@@ -522,13 +522,14 @@ export const appProjects = [
     title: "Eng-Urdu Dictionary",
     subtitle: "Education",
     technologies: ["Tailwind.css", "React Native", "AdMob", "Redux toolkit"],
-    link: "https://e-commerce-furniture-website-kappa.vercel.app",
+    link: "https://apkpure.com/p/com.sbnews",
   },
   {
     image: image.music,
     title: "Music Player App",
     subtitle: "Music, Sound player",
     technologies: ["React Native", "Spotify API", "Tailwind.css"],
+    link: "https://apkpure.com/p/com.sbnews",
   },
 ];
 

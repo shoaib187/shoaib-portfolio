@@ -29,6 +29,7 @@ const About = React.memo(() => {
           <ReactTyped
             strings={[
               "Welcome to my site!",
+              "React Native & Next.js Developer at Snipbyte!",
               "React Native Developer!",
               "React Js Developer!",
               "Front-End-Developer!",
